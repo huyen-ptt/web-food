@@ -108,12 +108,12 @@
         </div>
       </div>
     </div>
-    <button class="btn-cart">
+    <router-link to="/cart" class="btn-cart">
       <div class="bag">
         <img class="cartt" src="@/assets/imgs/cart.png"/>
       </div>
       <div>Add to cart</div>
-    </button>
+    </router-link>
   </div>
 </template>
 <script>
@@ -279,6 +279,7 @@ export default {
     font-size: 15px;
     font-weight: 400;
     margin-top: 20px;
+    width: 167px;
     .bag{
       background: #FFFFFF;
       border-radius: 999px;

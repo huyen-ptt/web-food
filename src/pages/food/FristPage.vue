@@ -24,10 +24,10 @@
          </filter>
        </defs>
      </svg>
-     <div class="title">
+     <router-link to="sidemenu" class="title">
        <img src="@/assets/imgs/food.png"/>
        <img src="@/assets/imgs/hub.png"/>
-     </div>
+     </router-link>
    </div>
    <div class="footer">
      <img src="@/assets/imgs/rectangle.png"/>
