@@ -60,7 +60,7 @@
         </div>
       </div>
     </div>
-   <div>
+    <div>
      <button class="btn-out">
        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
          <circle cx="13" cy="13" r="13" fill="white"/>
@@ -87,71 +87,4 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-.container-side-menu{
-  position: relative;
-  //background-image: url("@/assets/imgs/side-menu.png");
-  //background-size: cover;
-  //background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  padding: 30px 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  .img-top{
-    position: absolute;
-    top:149px;
-    right: 0px;
-  }
-  .img-bottom{
-    position: absolute;
-    top:100px;
-    right: 0px;
-  }
-  .information{
-    margin-bottom: 47px;
-    .avt{
-      border-radius:999px ;
-      margin-bottom: 20px;
-    }
-    .name-person{
-      color: #000;
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    .email-person{
-      color: #9EA1B1;
-      font-size: 14px;
-      font-weight: 400;
-    }
-  }
-  .wrapper-link{
-    .item-link{
-      display: flex;
-      align-items: center;
-      gap:14px;
-      padding-bottom: 33px;
-      .link{
-        color: #000;
-        font-size: 16px;
-        font-weight: 400;
-      }
-    }
-  }
-  .btn-out{
-    border-radius: 28px;
-    background: #FE724C;
-    box-shadow: 0px 10px 30px 0px rgba(254, 114, 76, 0.20);
-    padding: 9px 18px;
-    border: 0;
-    display: flex;
-    align-items: center;
-    gap:9px;
-    color: #FFF;
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-}
 </style>

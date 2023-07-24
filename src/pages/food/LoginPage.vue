@@ -1,6 +1,8 @@
 <template>
   <div class="container-register">
-    <img class="arrow" src="@/assets/imgs/arrow-left.png"/>
+    <router-link to="/homescreen">
+      <img class="arrow" src="@/assets/imgs/arrow-left.png"/>
+    </router-link>
     <div class="login">Login</div>
     <div>
       <div class="input-login">

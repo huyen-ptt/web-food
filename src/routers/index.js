@@ -6,13 +6,14 @@ import InputPassword from '@/pages/InputPassword.vue'
 import SlotPage from '@/pages/SlotPage.vue'
 import FristPage from '@/pages/food/FristPage.vue'
 import SignUpPage from '@/pages/food/SignUpPage.vue'
-import RegisterPage from '@/pages/food/LoginPage.vue'
+import LoginPage from '@/pages/food/LoginPage.vue'
 import SideMenu from  '@/pages/food/SideMenu.vue'
 import HomeScreen from  '@/pages/food/HomeScreen.vue'
 import FoodDetails from '@/pages/food/FoodDetails.vue'
 import CategoryPage from '@/pages/food/CategoryPage.vue'
 import CartPage  from '@/pages/food/CartPage.vue'
 import OrderComing from '@/pages/food/OrderComing.vue'
+import FavoritePage from '@/pages/food/FavoritePage.vue'
 const routes = [
     {
         path: "/home",
@@ -33,6 +34,11 @@ const routes = [
         path: "/ordercoming",
         name: "OrderComing",
         component: OrderComing,
+    },
+    {
+        path: "/favorite",
+        name: "FavoritePage",
+        component: FavoritePage,
     },
     {
         path: "/cart",
@@ -61,8 +67,8 @@ const routes = [
     },
     {
         path: "/register",
-        name: "RegisterPage",
-        component: RegisterPage,
+        name: "LoginPage",
+        component: LoginPage,
     },
     {
         path: "/slot",
