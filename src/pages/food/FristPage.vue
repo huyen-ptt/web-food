@@ -24,7 +24,7 @@
          </filter>
        </defs>
      </svg>
-     <router-link to="sidemenu" class="title">
+     <router-link to="/homescreen" class="title">
        <img src="@/assets/imgs/food.png"/>
        <img src="@/assets/imgs/hub.png"/>
      </router-link>
