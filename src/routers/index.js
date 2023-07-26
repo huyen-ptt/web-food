@@ -16,6 +16,8 @@ import OrderComing from '@/pages/food/OrderComing.vue'
 import FavoritePage from '@/pages/food/FavoritePage.vue'
 import ProfilePage  from '@/pages/food/ProfilePage.vue'
 import SignUp from '@/pages/food/SignUp.vue'
+import VefificationPage from '@/pages/food/VefificationPage.vue'
+import AddressPage from '@/pages/food/AddressPage.vue'
 const routes = [
     {
         path: "/home",
@@ -31,6 +33,11 @@ const routes = [
         path: "/homescreen",
         name: "HomeScreen",
         component: HomeScreen,
+    },
+    {
+        path: "/address",
+        name: "AddressPage",
+        component: AddressPage,
     },
     {
         path: "/ordercoming",
@@ -81,6 +88,11 @@ const routes = [
         path: "/register",
         name: "LoginPage",
         component: LoginPage,
+    },
+    {
+        path: "/vefification",
+        name: "VefificationPage",
+        component: VefificationPage,
     },
     {
         path: "/slot",
