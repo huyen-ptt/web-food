@@ -5,7 +5,7 @@ import TestPage from '@/pages/TestPage.vue'
 import InputPassword from '@/pages/InputPassword.vue'
 import SlotPage from '@/pages/SlotPage.vue'
 import FristPage from '@/pages/food/FristPage.vue'
-import SignUpPage from '@/pages/food/SignUpPage.vue'
+import WelcomePage from '@/pages/food/WelcomePage.vue'
 import LoginPage from '@/pages/food/LoginPage.vue'
 import SideMenu from  '@/pages/food/SideMenu.vue'
 import HomeScreen from  '@/pages/food/HomeScreen.vue'
@@ -14,6 +14,8 @@ import CategoryPage from '@/pages/food/CategoryPage.vue'
 import CartPage  from '@/pages/food/CartPage.vue'
 import OrderComing from '@/pages/food/OrderComing.vue'
 import FavoritePage from '@/pages/food/FavoritePage.vue'
+import ProfilePage  from '@/pages/food/ProfilePage.vue'
+import SignUp from '@/pages/food/SignUp.vue'
 const routes = [
     {
         path: "/home",
@@ -51,6 +53,11 @@ const routes = [
         component: CategoryPage,
     },
     {
+        path: "/profile",
+        name: "ProfilePage",
+        component: ProfilePage,
+    },
+    {
         path: "/detail/:id",
         name: "FoodDetails",
         component: FoodDetails,
@@ -61,9 +68,14 @@ const routes = [
         component: SideMenu,
     },
     {
+        path: "/welcome",
+        name: "WelcomePage",
+        component: WelcomePage,
+    },
+    {
         path: "/signup",
-        name: "SignUpPage",
-        component: SignUpPage,
+        name: "SignUp",
+        component: SignUp,
     },
     {
         path: "/register",
