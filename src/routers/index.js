@@ -7,7 +7,6 @@ import SlotPage from '@/pages/SlotPage.vue'
 import FristPage from '@/pages/food/FristPage.vue'
 import WelcomePage from '@/pages/food/WelcomePage.vue'
 import LoginPage from '@/pages/food/LoginPage.vue'
-import SideMenu from  '@/pages/food/SideMenu.vue'
 import HomeScreen from  '@/pages/food/HomeScreen.vue'
 import FoodDetails from '@/pages/food/FoodDetails.vue'
 import CategoryPage from '@/pages/food/CategoryPage.vue'
@@ -18,6 +17,9 @@ import ProfilePage  from '@/pages/food/ProfilePage.vue'
 import SignUp from '@/pages/food/SignUp.vue'
 import VefificationPage from '@/pages/food/VefificationPage.vue'
 import AddressPage from '@/pages/food/AddressPage.vue'
+import RatingPage  from '@/pages/food/RatingPage.vue'
+import ReviewPage from '@/pages/food/ReviewPage.vue'
+import ReviewResturent from '@/pages/food/ReviewResturent.vue'
 const routes = [
     {
         path: "/home",
@@ -35,6 +37,16 @@ const routes = [
         component: HomeScreen,
     },
     {
+        path: "/resturent",
+        name: "ReviewResturent",
+        component: ReviewResturent,
+    },
+    {
+        path: "/review",
+        name: "ReviewPage",
+        component: ReviewPage,
+    },
+    {
         path: "/address",
         name: "AddressPage",
         component: AddressPage,
@@ -43,6 +55,11 @@ const routes = [
         path: "/ordercoming",
         name: "OrderComing",
         component: OrderComing,
+    },
+    {
+        path: "/rating",
+        name: "RatingPage",
+        component: RatingPage,
     },
     {
         path: "/favorite",
@@ -69,11 +86,7 @@ const routes = [
         name: "FoodDetails",
         component: FoodDetails,
     },
-    {
-        path: "/sidemenu",
-        name: "SideMenu",
-        component: SideMenu,
-    },
+ 
     {
         path: "/welcome",
         name: "WelcomePage",

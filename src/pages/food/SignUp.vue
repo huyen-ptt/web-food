@@ -1,8 +1,6 @@
 <template>
   <div class="container-register">
-<!--    <router-link to="/homescreen">-->
-<!--      <img class="arrow" src="@/assets/imgs/arrow-left.png"/>-->
-<!--    </router-link>-->
+    <img @click="nextPage" class="arrow" src="@/assets/imgs/arrow-left.png"/>
     <div class="login">Sign Up</div>
     <div>
       <div class="input-login">
@@ -19,13 +17,15 @@
         <i class="fa-regular fa-eye"></i>
       </div>
     </div>
-<!--    <div class="forgot-password">Forgot password?</div>-->
+    <!--    <div class="forgot-password">Forgot password?</div>-->
     <router-link to="/sidemenu">
       <div class="btn-login-wrapper">
         <button class="btn-login">SIGN UP</button>
       </div>
     </router-link>
-    <div class="reminder">Already have an account?  <router-link to="/register"><span class="return">Login</span></router-link></div>
+    <div class="reminder">Already have an account?
+      <router-link to="/register"><span class="return">Login</span></router-link>
+    </div>
     <div class="sign-in">
       <div class="thanh-ngang"></div>
       <div class="instruct"> sign in with</div>
@@ -61,6 +61,17 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    nextPage() {
+      window.history.go(-1)
+    }
+
+  }
+
+}
+</script>
 <style scoped lang="scss">
 .container-register {
   width: 100%;
@@ -119,8 +130,10 @@
     font-weight: 400;
     margin-bottom: 32px;
   }
-  .btn-login-wrapper{
+
+  .btn-login-wrapper {
     padding: 0 65px;
+
     .btn-login {
       border-radius: 28px;
       background: var(--primary-color, #FE724C);
@@ -135,6 +148,7 @@
       justify-content: center;
     }
   }
+
   .reminder {
     padding-top: 32px;
     color: #5B5B5E;
@@ -143,42 +157,48 @@
     font-weight: 400;
     margin-bottom: 61px;
   }
-  .btn{
+
+  .btn {
     display: flex;
     align-items: center;
-    gap:55px;
+    gap: 55px;
     margin-bottom: 23px;
     justify-content: space-around;
-    button{
+
+    button {
       border-radius: 27px;
       background: #FFF;
       box-shadow: 17px 17px 35px 0px rgba(211, 209, 216, 0.25);
       display: flex;
-      gap:20px;
+      gap: 20px;
       align-items: center;
       padding: 13px 12px;
       border: 0;
-      div{
+
+      div {
         color: #000;
         font-size: 13px;
         font-weight: 400;
       }
     }
   }
-  .sign-in{
+
+  .sign-in {
     display: flex;
     align-items: center;
-    gap:17px;
+    gap: 17px;
     margin-bottom: 18px;
     justify-content: center;
-    .thanh-ngang{
+
+    .thanh-ngang {
       width: 89px;
       height: 1px;
       background: rgba(179, 179, 179, 0.50);
 
 
     }
-    .instruct{
+
+    .instruct {
       color: #5B5B5E;
       font-size: 16px;
       font-weight: 500;

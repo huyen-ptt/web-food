@@ -2,8 +2,7 @@
   <div class="cart">
     <div class="header-cart">
       <div class="title">
-       <router-link to="/detail/1">
-         <svg xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
+         <svg @click="nextPage" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
            <g filter="url(#filter0_d_814_5554)">
              <path
                  d="M41 10H27C20.3726 10 15 15.3726 15 22V36C15 42.6274 20.3726 48 27 48H41C47.6274 48 53 42.6274 53 36V22C53 15.3726 47.6274 10 41 10Z"
@@ -25,7 +24,6 @@
              </filter>
            </defs>
          </svg>
-       </router-link>
         <div class="title-big">Cart</div>
         <div></div>
       </div>
@@ -79,9 +77,11 @@
         </div>
       </div>
     </div>
-    <div class="btn-check">
-      <button class="btn-check-out">Checkout</button>
-    </div>
+   <router-link to="/profile">
+     <div class="btn-check">
+       <button class="btn-check-out">Checkout</button>
+     </div>
+   </router-link>
   </div>
 </template>
 <script>
@@ -107,6 +107,12 @@ export default {
         },
       ]
     }
+  },
+  methods:{
+    nextPage(){
+      window.history.go(-1)
+    }
+
   }
 }
 </script>
