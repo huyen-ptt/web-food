@@ -106,7 +106,7 @@
           </div>
           <div class="item-one">
             <div class="total-food">+${{ food.total }}</div>
-            <input type="checkbox">
+            <input type="checkbox" id="check" v-model="food.checked">
           </div>
         </div>
       </div>
@@ -124,10 +124,10 @@ export default {
   data() {
     return {
       foodList: [
-        {id: 1, name: 'Pepper  Julienned', img: '/src/assets/imgs/perper.png', total: 2.30},
-        {id: 2, name: 'Baby Spinach', img: '/src/assets/imgs/spinach.png', total: 4.70},
-        {id: 3, name: 'Masroom', img: '/src/assets/imgs/masroom.png', total: 2.50},
-      ]
+        {id: 1, name: 'Pepper  Julienned', img: '/src/assets/imgs/perper.png', total: 2.30, checked: true},
+        {id: 2, name: 'Baby Spinach', img: '/src/assets/imgs/spinach.png', total: 4.70 ,checked: false},
+        {id: 3, name: 'Masroom', img: '/src/assets/imgs/masroom.png', total: 2.50, checked: false},
+      ],
     }
   },
   methods:{
@@ -143,6 +143,8 @@ export default {
   width: 100%;
   height: 100%;
   padding: 20px;
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
+
 
   .restaurant {
     .img-restaurant {

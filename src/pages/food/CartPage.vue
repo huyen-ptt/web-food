@@ -124,6 +124,8 @@ export default {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
+
   .header-cart{
     padding-bottom: 110px;
     .title {

@@ -117,6 +117,8 @@ export default {
   width: 100%;
   height: 100%;
   padding: 37px 26px;
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
+
   .header {
     display: flex;
     align-items: center;

@@ -55,7 +55,7 @@
       <div class="name">Eljad Eendaz</div>
       <div class="update-profile">Edit Profile</div>
     </div>
-    <div>
+    <div class="bao-input">
       <div class="input-login">
         <label class="title" for="email">Full name</label>
         <input id="email" class="input" type="text" placeholder="Full name...">
@@ -85,6 +85,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .profile {
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
   width: 100%;
   height: 100vh;
   background-image: url("@/assets/imgs/profile.png");
@@ -138,38 +139,41 @@ export default {
       font-weight: 400;
     }
   }
+   .bao-input{
+     margin-bottom: 147px;
+     .input-login {
+       display: flex;
+       flex-direction: column;
+       margin-bottom: 29px;
+       position: relative;
 
-  .input-login {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 29px;
-    position: relative;
+       .title {
+         color: #9796A1;
+         font-size: 16px;
+         font-weight: 400;
+         padding-bottom: 12px;
+       }
 
-    .title {
-      color: #9796A1;
-      font-size: 16px;
-      font-weight: 400;
-      padding-bottom: 12px;
-    }
+       .fa-eye {
+         position: absolute;
+         top: 55px;
+         right: 30px;
+       }
 
-    .fa-eye {
-      position: absolute;
-      top: 55px;
-      right: 30px;
-    }
+       .input {
+         border-radius: 10px;
+         border: 1px solid #EEE;
+         background: #FFF;
+         box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25);
+         padding: 22px 98px 26px 20px;
+         color: var(--c-4-c-4-c-4, #C4C4C4);
+         font-size: 17px;
+         font-weight: 400;
+       }
 
-    .input {
-      border-radius: 10px;
-      border: 1px solid #EEE;
-      background: #FFF;
-      box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25);
-      padding: 22px 98px 26px 20px;
-      color: var(--c-4-c-4-c-4, #C4C4C4);
-      font-size: 17px;
-      font-weight: 400;
-    }
+     }
+   }
 
-  }
 
 }
 </style>

@@ -119,6 +119,8 @@ export default {
 .category {
   width: 100%;
   height: 100%;
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
+
 
   .header {
     display: flex;

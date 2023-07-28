@@ -75,10 +75,12 @@ export default {
 <style scoped lang="scss">
 .container-register {
   width: 100%;
+  height: 100%;
   background-image: url("@/assets/imgs/login.png");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 160px 27px 28px;
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
 
   .arrow {
     margin-bottom: 50px;

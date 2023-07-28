@@ -76,6 +76,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .container{
+  box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
   width: 100%;
   height: 100vh;
   display: flex;
