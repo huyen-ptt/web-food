@@ -213,7 +213,7 @@
           <div v-for="o in 3" class="restaurant-small">
             <router-link to="/detail/1">
               <div class="img-logo">
-                <img class="restaurant" src="imgs/imgg-restaurant.png"/>
+                <img class="restaurant" src="/imgs/imgg-restaurant.png"/>
                 <svg class="tym" xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58"
                      fill="none">
                   <g filter="url(#filter0_d_814_6345)">
