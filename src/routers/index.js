@@ -27,12 +27,12 @@ const routes = [
         component: HomePage,
     },
     {
-        path: "/",
+        path: "/first",
         name: "FristPage",
         component: FristPage,
     },
     {
-        path: "/homescreen",
+        path: "/",
         name: "HomeScreen",
         component: HomeScreen,
     },

@@ -26,7 +26,12 @@
     </svg>
     <div class="photo-representative">
       <div class="circle">
-        <img class="avt" src="@/assets/imgs/avt.png"/>
+        <input type="file" id="input" style="display: none">
+        <img class="avt" :src="img"/>
+<!--        <label for="avatar">Choose a profile picture:</label>-->
+<!--        <input type="file"-->
+<!--               id="avatar" name="avatar"-->
+<!--               class="avt">-->
         <svg class="cam" xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57" fill="none">
           <g filter="url(#filter0_d_814_5155)">
             <circle cx="28.5" cy="25.5" r="13.5" fill="white"/>
@@ -74,6 +79,12 @@
 </template>
 <script>
 export default {
+  data(){
+    return{
+      img: '/imgs/avt.png'
+    }
+  },
+
   methods:{
     nextPage(){
       window.history.go(-1)

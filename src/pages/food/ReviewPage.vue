@@ -68,7 +68,7 @@ export default {
           name: 'Alyce Lambo',
           dateCmt: '25/06/2020',
           evaluate: '5.0',
-          avt: '/src/assets/imgs/avt-cmt.png'
+          avt: '/imgs/avt-cmt.png'
         },
         {
           id: 2,
@@ -76,7 +76,7 @@ export default {
           name: 'Gonela Solom',
           dateCmt: '22/06/2020',
           evaluate: '4.5',
-          avt: '/src/assets/imgs/avt-comment.png'
+          avt: '/imgs/avt-comment.png'
         },
         {
           id: 3,
@@ -84,7 +84,7 @@ export default {
           name: 'Brian C',
           dateCmt: '21/06/2020',
           evaluate: '2.5',
-          avt: '/src/assets/imgs/avtt-amt.png'
+          avt: '/imgs/avtt-amt.png'
         },
       ]
     }

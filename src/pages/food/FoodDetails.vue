@@ -80,11 +80,11 @@
 
       </div>
       <div class="so-luong-mua">
-        <div class="money"><span>$</span>9.50</div>
+        <div class="money"><span>$</span>{{(gia_ca*quanlity).toFixed(2)}}</div>
         <div class="luong-mua">
-          <i class="fa-solid fa-circle-minus"></i>
-          <div class="total-mua">02</div>
-          <i class="fa-solid fa-circle-plus"></i>
+          <i @click="minusQuanlity" class="fa-solid fa-circle-minus"></i>
+          <div class="total-mua">{{quanlity}}</div>
+          <i @click="plusQuanlity" class="fa-solid fa-circle-plus"></i>
         </div>
       </div>
       <div class="describe">
@@ -98,16 +98,24 @@
         <div v-for="food in foodList"
              :key="food.id"
              class="item-food">
+        <label :for="`check${food.id}`">
           <div class="item-one">
             <img class="img-food" :src="food.img"/>
             <div class="name-food">
               {{ food.name }}
             </div>
           </div>
-          <div class="item-one">
-            <div class="total-food">+${{ food.total }}</div>
-            <input type="checkbox" id="check" v-model="food.checked">
-          </div>
+        </label>
+          <label :for="`check${food.id}`">
+            <div class="item-one">
+              <div class="total-food">+${{ food.total }}</div>
+              <input type="checkbox" :id="`check${food.id}`" v-model="food.checked">
+<!--              <label class="container">-->
+<!--                <input type="checkbox" checked="checked" name="radio" :id="`check${food.id}`" v-model="food.checked">-->
+<!--                <span class="checkmark"></span>-->
+<!--              </label>-->
+            </div>
+          </label>
         </div>
       </div>
     </div>
@@ -123,17 +131,29 @@
 export default {
   data() {
     return {
+      quanlity: 2,
       foodList: [
-        {id: 1, name: 'Pepper  Julienned', img: '/src/assets/imgs/perper.png', total: 2.30, checked: true},
-        {id: 2, name: 'Baby Spinach', img: '/src/assets/imgs/spinach.png', total: 4.70 ,checked: false},
-        {id: 3, name: 'Masroom', img: '/src/assets/imgs/masroom.png', total: 2.50, checked: false},
+        {id: 1, name: 'Pepper  Julienned', img: '/imgs/perper.png', total: 2.30, checked: true},
+        {id: 2, name: 'Baby Spinach', img: '/imgs/spinach.png', total: 4.70 ,checked: false},
+        {id: 3, name: 'Masroom', img: '/imgs/masroom.png', total: 2.50, checked: false},
       ],
+      gia_ca: 9.21
     }
   },
   methods:{
+
     nextPage(){
       window.history.go(-1)
+    },
+    minusQuanlity(){
+      if (this.quanlity > 0) {
+        this.quanlity--;
+      }
+    },
+    plusQuanlity(){
+      this.quanlity ++;
     }
+
 
   }
 }
@@ -144,8 +164,6 @@ export default {
   height: 100%;
   padding: 20px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
-
-
   .restaurant {
     .img-restaurant {
       position: relative;
@@ -154,7 +172,7 @@ export default {
       .avt {
         width: 100%;
         border-radius: 20px;
-        height: 300px;
+        height: auto;
         object-fit: cover;
       }
 
@@ -304,5 +322,43 @@ export default {
       padding: 8px 10px;
     }
   }
+    /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+    /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+    /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+    /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+    /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
 }
 </style>

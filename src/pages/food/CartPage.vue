@@ -95,7 +95,7 @@ export default {
           price: 15.31,
           quantity: 2,
           main_food: 'Spicy chicken, beef',
-          img: '/src/assets/imgs/pizza-cart.png'
+          img: '/imgs/pizza-cart.png'
         },
         {
           id: 2,
@@ -103,9 +103,10 @@ export default {
           price: 12.32,
           quantity: 2,
           main_food: 'with baked salmon',
-          img: '/src/assets/imgs/salad-cart.png'
+          img: '/imgs/salad-cart.png'
         },
-      ]
+      ],
+
     }
   },
   methods:{

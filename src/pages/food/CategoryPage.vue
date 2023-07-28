@@ -134,10 +134,6 @@ export default {
     .header-left {
       padding-left: 27px;
 
-      .arrow-left {
-        margin: 37px 0;
-      }
-
       .fast-food {
         color: #272D2F;
         font-size: 45px;

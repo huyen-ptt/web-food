@@ -107,8 +107,8 @@ export default {
   data() {
     return {
       orderComingList: [
-        {id: 1, img: '/src/assets/imgs/nhan-hang.png', time: '20 Jun, 10:30', item: 3, price: 17.51, name: 'Jimmy John’s  '},
-        {id: 2, img: '/src/assets/imgs/nhan-hangg.png', time: '19 Jun, 11:50', item: 2, price: 12.12, name: 'Subway  '},
+        {id: 1, img: '/imgs/nhan-hang.png', time: '20 Jun, 10:30', item: 3, price: 17.51, name: 'Jimmy John’s  '},
+        {id: 2, img: '/imgs/nhan-hangg.png', time: '19 Jun, 11:50', item: 2, price: 12.12, name: 'Subway  '},
       ]
     }
   },
