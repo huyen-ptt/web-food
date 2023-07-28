@@ -416,7 +416,6 @@
         </svg>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -425,11 +424,11 @@ export default {
     return {
       isOpenMenu: false,
       productList: [
-        {id: 1, name: 'Burger', img: '/src/assets/imgs/burger.png'},
-        {id: 2, name: 'Donat', img: '/src/assets/imgs/donet.png'},
-        {id: 3, name: 'Pizza', img: '/src/assets/imgs/pizza.png'},
-        {id: 4, name: 'Mexican', img: '/src/assets/imgs/mexican.png'},
-        {id: 4, name: 'Asian', img: '/src/assets/imgs/asian.png'},
+        {id: 1, name: 'Burger', img: 'imgs/burger.png'},
+        {id: 2, name: 'Donat', img: 'imgs/donet.png'},
+        {id: 3, name: 'Pizza', img: 'imgs/pizza.png'},
+        {id: 4, name: 'Mexican', img: 'imgs/mexican.png'},
+        {id: 4, name: 'Asian', img: 'imgs/asian.png'},
       ]
     }
   },
