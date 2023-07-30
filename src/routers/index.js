@@ -98,7 +98,7 @@ const routes = [
         component: SignUp,
     },
     {
-        path: "/register",
+        path: "/login",
         name: "LoginPage",
         component: LoginPage,
     },

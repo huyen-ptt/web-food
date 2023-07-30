@@ -1,6 +1,10 @@
 <template>
   <div class="container-register">
-    <img @click="nextPage" class="arrow" src="@/assets/imgs/arrow-left.png"/>
+    <div @click="nextPage" class="arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
     <div class="login">Login</div>
     <div>
       <div class="input-login">
@@ -80,6 +84,11 @@ export default {
 
   .arrow {
     margin-bottom: 50px;
+    width: 40px;
+    padding: 11px 16px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
   }
 
   .login {

@@ -1,37 +1,14 @@
 <template>
   <div class="profile">
-
-    <svg @click="nextPage" class="next" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78"
-         fill="none">
-      <g filter="url(#filter0_d_814_5161)">
-        <path
-            d="M41 10H27C20.3726 10 15 15.3726 15 22V36C15 42.6274 20.3726 48 27 48H41C47.6274 48 53 42.6274 53 36V22C53 15.3726 47.6274 10 41 10Z"
-            fill="white"/>
-      </g>
-      <path d="M37 24L32 28.6839L36.8161 33.5" stroke="#111719" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round"/>
-      <defs>
-        <filter id="filter0_d_814_5161" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                         result="hardAlpha"/>
-          <feOffset dx="5" dy="10"/>
-          <feGaussianBlur stdDeviation="10"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0.827451 0 0 0 0 0.819608 0 0 0 0 0.847059 0 0 0 0.3 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_814_5161"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_814_5161" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
+    <div @click="nextPage" class="next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
     <div class="photo-representative">
       <div class="circle">
         <input type="file" id="input" style="display: none">
         <img class="avt" :src="img"/>
-<!--        <label for="avatar">Choose a profile picture:</label>-->
-<!--        <input type="file"-->
-<!--               id="avatar" name="avatar"-->
-<!--               class="avt">-->
         <svg class="cam" xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57" fill="none">
           <g filter="url(#filter0_d_814_5155)">
             <circle cx="28.5" cy="25.5" r="13.5" fill="white"/>
@@ -105,7 +82,12 @@ export default {
   background-repeat: no-repeat;
 
   .next {
-    margin: 37px 26px;
+    margin-bottom: 50px;
+    width: 40px;
+    padding: 11px 16px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
   }
 
   .photo-representative {

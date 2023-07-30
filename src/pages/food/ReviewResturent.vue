@@ -1,22 +1,10 @@
 <template>
   <div class="container">
-    <svg @click="nextPage" class="next" xmlns="http://www.w3.org/2000/svg" width="79" height="78" viewBox="0 0 79 78" fill="none">
-      <g filter="url(#filter0_d_814_3876)">
-        <path d="M41.5 10H27.5C20.8726 10 15.5 15.3726 15.5 22V36C15.5 42.6274 20.8726 48 27.5 48H41.5C48.1274 48 53.5 42.6274 53.5 36V22C53.5 15.3726 48.1274 10 41.5 10Z" fill="white"/>
-      </g>
-      <path d="M37.5 24L32.5 28.6839L37.3161 33.5" stroke="#111719" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <defs>
-        <filter id="filter0_d_814_3876" x="0.5" y="0" width="78" height="78" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-          <feOffset dx="5" dy="10"/>
-          <feGaussianBlur stdDeviation="10"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0.827451 0 0 0 0 0.819608 0 0 0 0 0.847059 0 0 0 0.3 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_814_3876"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_814_3876" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
+    <div @click="nextPage" class="arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
      <div class="header">
        <img class="avt" src="@/assets/imgs/img-cuoi.png"/>
        <div class="title">How was your last order from Pizza Hut ?</div>
@@ -83,6 +71,14 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   padding: 37px 26px;
+  .arrow {
+    margin-bottom: 50px;
+    width: 40px;
+    padding: 11px 16px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
+  }
   .header{
     .avt{
       display: flex;

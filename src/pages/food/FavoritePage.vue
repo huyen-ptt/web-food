@@ -1,28 +1,11 @@
 <template>
 <div class="my-favorite">
   <div class="header">
-    <svg @click="nextPage" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
-      <g filter="url(#filter0_d_814_4987)">
-        <path
-            d="M41 10H27C20.3726 10 15 15.3726 15 22V36C15 42.6274 20.3726 48 27 48H41C47.6274 48 53 42.6274 53 36V22C53 15.3726 47.6274 10 41 10Z"
-            fill="white"/>
-      </g>
-      <path d="M37 24L32 28.6839L36.8161 33.5" stroke="#111719" stroke-width="1.5" stroke-linecap="round"
-            stroke-linejoin="round"/>
-      <defs>
-        <filter id="filter0_d_814_4987" x="0" y="0" width="78" height="78" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                         result="hardAlpha"/>
-          <feOffset dx="5" dy="10"/>
-          <feGaussianBlur stdDeviation="10"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0.827451 0 0 0 0 0.819608 0 0 0 0 0.847059 0 0 0 0.3 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_814_4987"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_814_4987" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
+    <div @click="nextPage" class="arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
     <div class="title-header">Favorites</div>
     <img class="avt" src="@/assets/imgs/avt.png"/>
   </div>
@@ -118,7 +101,11 @@ export default {
   height: 100%;
   padding: 37px 26px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
-
+  .arrow{
+    padding: 12px 17px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
+  }
   .header {
     display: flex;
     align-items: center;
