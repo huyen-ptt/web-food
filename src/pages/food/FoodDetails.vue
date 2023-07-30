@@ -164,6 +164,7 @@ export default {
   height: 100%;
   padding: 20px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
+
   .restaurant {
     .img-restaurant {
       position: relative;

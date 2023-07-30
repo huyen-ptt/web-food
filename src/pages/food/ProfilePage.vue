@@ -96,6 +96,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .profile {
+  padding: 37px 26px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
   width: 100%;
   height: 100vh;
@@ -151,7 +152,7 @@ export default {
     }
   }
    .bao-input{
-     margin-bottom: 147px;
+     padding-bottom: 147px;
      .input-login {
        display: flex;
        flex-direction: column;

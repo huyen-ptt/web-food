@@ -47,9 +47,9 @@
               <path d="M5.09375 13.3628L13.4787 4.97779" stroke="#FF3600" stroke-linecap="round"/>
             </svg>
             <div class="luong-mua">
-              <i class="fa-solid fa-circle-minus"></i>
+              <i @click="minusQuanlity(food)" class="fa-solid fa-circle-minus"></i>
               <div class="total-mua">{{ food.quantity }}</div>
-              <i class="fa-solid fa-circle-plus"></i>
+              <i @click="plusQuanlity(food)" class="fa-solid fa-circle-plus"></i>
             </div>
           </div>
         </div>
@@ -88,6 +88,7 @@
 export default {
   data() {
     return {
+      change_quality: '',
       orderList: [
         {
           id: 1,
@@ -112,8 +113,19 @@ export default {
   methods:{
     nextPage(){
       window.history.go(-1)
+    },
+  },
+  computed:{
+    minusQuanlity(item){
+      console.log(item)
+      if (item > 0) {
+       return  item --;
+      }
+    },
+    plusQuanlity(item){
+      console.log(item)
+      return item ++;
     }
-
   }
 }
 </script>
