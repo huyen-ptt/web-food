@@ -446,7 +446,7 @@ export default {
       }
     },
     showAlert(){
-      alert('This page is currently under construction.');
+      this.$message.error('The page is in progress')
     }
   }
 }
