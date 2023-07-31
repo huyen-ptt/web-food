@@ -62,7 +62,12 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding-bottom: 15px;
+    .avt-food{
+      width: 101px;
+      height: 101px;
+      border-radius: 20px;
+    }
     .product {
       display: flex;
       align-items: center;

@@ -35,7 +35,7 @@
         </svg>
       </div>
       <div class="name">Eljad Eendaz</div>
-      <div class="update-profile">Edit Profile</div>
+      <router-link to="/address" class="update-profile">Edit Profile</router-link>
     </div>
     <div class="bao-input">
       <div class="input-login">
@@ -131,6 +131,8 @@ export default {
       text-align: center;
       font-size: 14px;
       font-weight: 400;
+      display: flex;
+      justify-content: center;
     }
   }
    .bao-input{

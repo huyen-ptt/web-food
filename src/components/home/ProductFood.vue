@@ -10,8 +10,8 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
+  data() {
+    return {
       productList: [
         {id: 1, name: 'Burger', img: '/imgs/burger.png'},
         {id: 2, name: 'Donat', img: '/imgs/donet.png'},
@@ -35,30 +35,31 @@ export default {
   display: flex;
   align-items: center;
   gap: 15px;
-//overflow: hidden;
+  //overflow: hidden;
   margin-bottom: 41px;
-//overflow-y: hidden;
+  //overflow-y: hidden;
   overflow: auto;
 
-.item-product {
-  color: #67666D;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 500;
-  border-radius: 100px;
-  background: #FFF;
-  box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
-  padding: 8px 10px 28px 10px;
+  .item-product {
+    color: #67666D;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 100px;
+    background: #FFF;
+    box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
+    padding: 8px 10px 28px 10px;
 
-&:hover {
-   color: #FFF;
-   background: #FE724C;
-   cursor: pointer;
- }
+    &:hover {
+      color: #FFF;
+      background: #FE724C;
+      cursor: pointer;
+    }
 
-.avt {
-  padding-bottom: 10px;
-}
-}
+    .avt {
+      padding-bottom: 10px;
+      width: 50px;
+    }
+  }
 }
 </style>

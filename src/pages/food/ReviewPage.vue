@@ -10,7 +10,11 @@
       <div></div>
     </div>
     <div class="search">
-      <input class="input" type="text" placeholder="Write your review..."/>
+      <input @keyup.enter="addComment"
+          class="input"
+             v-model="comment"
+             type="text"
+             placeholder="Write your review..."/>
       <img class="avt" src="@/assets/imgs/avt.png"/>
     </div>
     <div class="wrapper-cmt">
@@ -44,6 +48,7 @@
 export default {
   data() {
     return {
+      comment: '',
       commentList: [
         {
           id: 1,
@@ -75,6 +80,17 @@ export default {
   methods:{
     nextPage(){
       window.history.go(-1)
+    },
+    addComment(){
+      const comment = {
+        content: this.comment,
+        name: 'Huyen Thanh',
+        dateCmt: '21/06/2022',
+        evaluate: '3.0',
+        avt: '/imgs/avt-cmt.png'
+      }
+      this.commentList.push(comment)
+      this.comment='';
     }
 
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-register">
+  <div class="container-register" @keyup.enter="onEnter()">
     <div @click="nextPage" class="arrow">
       <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
         <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="forgot-password">Forgot password?</div>
-    <router-link to="/homescreen">
+    <router-link to="/">
       <div class="btn-login-wrapper">
         <button class="btn-login">Login</button>
       </div>
@@ -66,6 +66,9 @@ export default {
   methods:{
     nextPage(){
       window.history.go(-1)
+    },
+    onEnter(){
+      this.$router.push('/');
     }
 
   }
