@@ -430,7 +430,13 @@ export default {
         {id: 2, name: 'Donat', img: '/imgs/donet.png'},
         {id: 3, name: 'Pizza', img: '/imgs/pizza.png'},
         {id: 4, name: 'Mexican', img: '/imgs/mexican.png'},
-        {id: 4, name: 'Asian', img: '/imgs/asian.png'},
+        {id: 5, name: 'Asian', img: '/imgs/asian.png'},
+        {id: 6, name: 'Burger', img: '/imgs/burger.png'},
+        {id: 7, name: 'Donat', img: '/imgs/donet.png'},
+        {id: 8, name: 'Pizza', img: '/imgs/pizza.png'},
+        {id: 9, name: 'Burger', img: '/imgs/burger.png'},
+        {id: 10, name: 'Donat', img: '/imgs/donet.png'},
+        {id: 11, name: 'Pizza', img: '/imgs/pizza.png'},
       ]
     }
   },
@@ -635,8 +641,10 @@ export default {
       display: flex;
       align-items: center;
       gap: 15px;
-      overflow: hidden;
-      margin-bottom: 30px;
+      //overflow: hidden;
+      margin-bottom: 42px;
+      //overflow-y: hidden;
+      overflow: auto;
 
       .item-product {
         color: #67666D;

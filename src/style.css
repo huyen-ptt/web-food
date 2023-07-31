@@ -7,7 +7,14 @@ a{
 /*img{*/
 /*  width: 100%;*/
 /*}*/
+.wrapper-product {
+  scrollbar-width: none; /* Ẩn thanh cuộn */
+}
 
+/* Ẩn thanh cuộn cho ngón tay thanh cuộn */
+.wrapper-product::-webkit-scrollbar {
+  display: none; /* Ẩn thanh cuộn */
+}
 * {
   padding: 0;
   margin: 0;
