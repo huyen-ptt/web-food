@@ -47,54 +47,18 @@
           <button class="btn-yes">Track Order</button>
         </div>
       </div>
-      <div class="lasted-orders">
-        <div class="title-lasted">Lasted Orders</div>
-        <div v-for="item in orderComingList"
-             :key="item.id"
-             class="item-order">
-          <div class="header-item">
-            <div class="avt-item">
-              <img class="avt" :src="item.img"/>
-              <div>
-                <div class="time-item">
-                  <div>{{ item.time }}</div>
-                  <div class="circle"></div>
-                  <div>{{ item.item }} item</div>
-                </div>
-                <div class="bao-nam-item">
-                  <div>{{ item.name }}</div>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
-                    <circle cx="4" cy="4" r="4" fill="#029094"/>
-                    <path d="M2.6665 3.37786L3.6665 4.44453L5.33317 2.66675" stroke="white"/>
-                  </svg>
-                </div>
-                <div class="order-cicrle">
-                  <div class="circle"></div>
-                  <div>Order Delivered</div>
-                </div>
-              </div>
-            </div>
-            <div class="color">${{ item.price }}</div>
-          </div>
-          <div class="order-btn">
-            <button class="btn-no">Rate</button>
-            <button class="btn-yes">Re-Order</button>
-          </div>
-        </div>
-      </div>
+      <LastedOrders/>
     </div>
   </div>
 </template>
 <script>
+import LastedOrders from "@/components/ordercoming/LastedOrders.vue";
+
 export default {
-  data() {
-    return {
-      orderComingList: [
-        {id: 1, img: '/imgs/nhan-hang.png', time: '20 Jun, 10:30', item: 3, price: 17.51, name: 'Jimmy John’s  '},
-        {id: 2, img: '/imgs/nhan-hangg.png', time: '19 Jun, 11:50', item: 2, price: 12.12, name: 'Subway  '},
-      ]
-    }
+  components: {
+    LastedOrders
   },
+
   methods:{
     nextPage(){
       window.history.go(-1)
@@ -265,49 +229,8 @@ export default {
         }
       }
     }
-    .lasted-orders{
-      .title-lasted{
-        color: #111719;
-        font-size: 18px;
-        font-weight: 600;
-        padding-bottom: 20px;
-      }
-    }
-    .color{
-      color: #FE724C;
-      font-size: 16px;
-      font-weight: 400;
-    }
   }
-  .time-item{
-    display: flex;
-    align-items: center;
-    gap:9px;
-    color: #9796A1;
-    font-size: 12px;
-    font-weight: 400;
-    padding-bottom: 10px;
-    .circle{
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: #C4C4C4;
-    }
-  }
-  .order-cicrle{
-    display: flex;
-    align-items: center;
-    gap:6px;
-    color: #4EE476;
-    font-size: 12px;
-    font-weight: 400;
-    padding-bottom: 10px;
-    .circle{
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #4EE476;
-    }
-  }
+
+
 }
 </style>

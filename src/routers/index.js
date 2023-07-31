@@ -72,7 +72,7 @@ const routes = [
         component: CartPage,
     },
     {
-        path: "/category/:id",
+        path: "/Category/:id",
         name: "CategoryPage",
         component: CategoryPage,
     },

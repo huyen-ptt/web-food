@@ -4,101 +4,47 @@
       <div class="title">
         <div @click="nextPage" class="arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-            <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="title-big">Cart</div>
         <div></div>
       </div>
-      <div class="wrapper-order">
-        <div v-for="food in orderList"
-             :key="food.id"
-             class="item-order">
-          <div class="product">
-            <div>
-              <img class="avt-food" :src="food.img"/>
-            </div>
-           <div>
-             <div class="name-food">{{ food.name }}</div>
-             <div class="main-food">{{ food.main_food }}</div>
-             <div class="price">${{ food.price }}</div>
-           </div>
-          </div>
-          <div class="item-right">
-            <svg class="x" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M5.09229 4.97754L13.4773 13.3625" stroke="#FF3600" stroke-linecap="round"/>
-              <path d="M5.09375 13.3628L13.4787 4.97779" stroke="#FF3600" stroke-linecap="round"/>
-            </svg>
-            <div class="luong-mua">
-              <i @click="minusQuanlity(food)" class="fa-solid fa-circle-minus"></i>
-              <div class="total-mua">{{ food.quantity }}</div>
-              <i @click="plusQuanlity(food)" class="fa-solid fa-circle-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      <OrderList/>
       <div class="note">
         <input type="text" class="input-note" placeholder="Promo Code"/>
         <button class="btn">Apply</button>
       </div>
-      <div class="wrapper-total">
-        <div class="item-total">
-          <div class="phi">Subtotal</div>
-          <div class="money">$27.30<span class="usd">USD</span></div>
-        </div>
-        <div class="item-total">
-          <div class="phi">Tax and Fees</div>
-          <div class="money">$5.30<span class="usd">USD</span></div>
-        </div>
-        <div class="item-total">
-          <div class="phi">Delivery</div>
-          <div class="money">$1.00<span class="usd">USD</span></div>
-        </div>
-        <div class="item-total">
-          <div class="phi">Total<span class="tong">(2 item)</span></div>
-          <div class="money">$33.60<span class="usd">USD</span></div>
-        </div>
-      </div>
+      <PayPage/>
     </div>
-   <router-link to="/profile">
-     <div class="btn-check">
-       <button class="btn-check-out">Checkout</button>
-     </div>
-   </router-link>
+    <router-link to="/profile">
+      <div class="btn-check">
+        <button class="btn-check-out">Checkout</button>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
+import OrderList from "@/components/Cart/OrderList.vue";
+import PayPage from "@/components/Cart/PayPage.vue";
+
 export default {
+  components: {
+    PayPage,
+    OrderList
+  },
   data() {
     return {
       change_quality: '',
-      orderList: [
-        {
-          id: 1,
-          name: 'Red n hot pizza',
-          price: 15.31,
-          quantity: 2,
-          main_food: 'Spicy chicken, beef',
-          img: '/imgs/pizza-cart.png'
-        },
-        {
-          id: 2,
-          name: 'Greek salad ',
-          price: 12.32,
-          quantity: 2,
-          main_food: 'with baked salmon',
-          img: '/imgs/salad-cart.png'
-        },
-      ],
-
     }
   },
-  methods:{
-    nextPage(){
+  methods: {
+    nextPage() {
       window.history.go(-1)
     },
   },
-  computed:{
+  computed: {
     // minusQuanlity(item){
     //   console.log(item)
     //   if (item > 0) {
@@ -122,19 +68,22 @@ export default {
   flex-direction: column;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
 
-  .header-cart{
+  .header-cart {
     padding-bottom: 110px;
+
     .title {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding-bottom: 39px;
-       .arrow{
-         padding: 12px 17px;
-         border-radius: 10px;
-         box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
 
-       }
+      .arrow {
+        padding: 12px 17px;
+        border-radius: 10px;
+        box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);
+
+      }
+
       .title-big {
         color: #111719;
         text-align: center;
@@ -143,65 +92,14 @@ export default {
       }
     }
 
-    .wrapper-order {
-      padding-bottom: 10px;
-      .item-order {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .product{
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          .name-food{
-            color: #000;
-            font-size: 18px;
-            font-weight: 600;
-            padding-bottom: 5px;
-          }
-          .main-food{
-            color: #8C8A9D;
-            font-size: 14px;
-            font-weight: 300;
-            padding-bottom: 13px;
-          }
-          .price{
-            color: #FE724C;
-            font-size: 16px;
-            font-weight: 600;
-          }
-        }
-        .item-right {
-          display: flex;
-          gap:35px;
-          flex-direction: column;
-          .x{
-            margin-left: 57px;
-          }
-          .luong-mua {
-            display: flex;
-            align-items: center;
-            gap: 9px;
 
-            .total-mua {
-              color: #000;
-              font-size: 16px;
-              font-weight: 600;
-            }
 
-            .fa-solid {
-              font-size: 27px;
-              color: #FE724C;
-            }
-          }
-        }
-      }
-    }
-    .note{
+    .note {
       width: 100%;
       position: relative;
       padding-bottom: 30px;
-      .input-note{
+
+      .input-note {
         border-radius: 100px;
         border: 1px solid #EEE;
         background: #FFF;
@@ -211,7 +109,8 @@ export default {
         font-size: 14px;
         font-weight: 300;
       }
-      .btn{
+
+      .btn {
         position: absolute;
         right: 10px;
         top: 10px;
@@ -226,51 +125,24 @@ export default {
 
       }
     }
-    .wrapper-total{
-      .item-total{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: 35px;
-        .phi{
-          color: #000;
-          font-size: 16px;
-          font-weight: 400;
-          .tong{
-            color: #BEBEBE;
-            font-size: 14px;
-            font-weight: 300;
-            padding-left: 3px;
-          }
-        }
-        .money{
-          color: #000;
-          text-align: right;
-          font-size: 19px;
-          font-weight: 500;
 
-          .usd{
-            color: #9796A1;
-            font-size: 14px;
-            font-weight: 400;
-            padding-left: 5px;
-          }
-        }
 
-      }
-    }
   }
-  .btn-check{
+
+  .btn-check {
     margin: 0 auto;
-    .btn-check-out{
+
+    .btn-check-out {
       color: #FFF;
       font-size: 15px;
       font-weight: 600;
       padding: 22px 80px;
       border-radius: 28.5px;
-      background:  #FE724C;
+      background: #FE724C;
       box-shadow: 0px 8px 30px 0px rgba(254, 114, 76, 0.25);
       border: 0;
+      margin: 0 auto;
+      display: flex;
     }
   }
 
