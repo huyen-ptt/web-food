@@ -642,7 +642,7 @@ export default {
       align-items: center;
       gap: 15px;
       //overflow: hidden;
-      margin-bottom: 42px;
+      margin-bottom: 41px;
       //overflow-y: hidden;
       overflow: auto;
 
