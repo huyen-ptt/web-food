@@ -2,7 +2,8 @@
   <div class="profile">
     <div @click="nextPage" class="next">
       <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="photo-representative">
@@ -40,15 +41,26 @@
     <div class="bao-input">
       <div class="input-login">
         <label class="title" for="email">Full name</label>
-        <input id="email" class="input" type="text" placeholder="Full name...">
+        <input v-model="name"
+               id="email"
+               class="input"
+               type="text"
+               placeholder="Full name...">
       </div>
       <div class="input-login">
         <label class="title" for="password">E-mail</label>
-        <input id="password" class="input" type="email" placeholder="E-mail...">
+        <input id="password"
+               v-model="email"
+               class="input"
+               type="email" placeholder="E-mail...">
       </div>
       <div class="input-login">
         <label class="title" for="phone">Phone Number</label>
-        <input id="phone" class="input" type="number" placeholder="Phone Number...">
+        <input v-model="phone"
+               id="phone"
+               class="input"
+               type="number"
+               placeholder="Phone Number...">
       </div>
     </div>
 
@@ -56,14 +68,17 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
+  data() {
+    return {
+      email: 'phamthanhhuyen19124@gmail.com',
+      phone: '0981156216',
+      name: 'Thanh Huyen',
       img: '/imgs/avt.png'
     }
   },
 
-  methods:{
-    nextPage(){
+  methods: {
+    nextPage() {
       window.history.go(-1)
     }
 
@@ -135,40 +150,42 @@ export default {
       justify-content: center;
     }
   }
-   .bao-input{
-     padding-bottom: 147px;
-     .input-login {
-       display: flex;
-       flex-direction: column;
-       margin-bottom: 29px;
-       position: relative;
 
-       .title {
-         color: #9796A1;
-         font-size: 16px;
-         font-weight: 400;
-         padding-bottom: 12px;
-       }
+  .bao-input {
+    margin-bottom: 147px;
 
-       .fa-eye {
-         position: absolute;
-         top: 55px;
-         right: 30px;
-       }
+    .input-login {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 29px;
+      position: relative;
 
-       .input {
-         border-radius: 10px;
-         border: 1px solid #EEE;
-         background: #FFF;
-         box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25);
-         padding: 22px 98px 26px 20px;
-         color: var(--c-4-c-4-c-4, #C4C4C4);
-         font-size: 17px;
-         font-weight: 400;
-       }
+      .title {
+        color: #9796A1;
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 12px;
+      }
 
-     }
-   }
+      .fa-eye {
+        position: absolute;
+        top: 55px;
+        right: 30px;
+      }
+
+      .input {
+        border-radius: 10px;
+        border: 1px solid #EEE;
+        background: #FFF;
+        box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25);
+        padding: 22px 98px 26px 20px;
+        color:#111719;
+        font-size: 17px;
+        font-weight: 400;
+      }
+
+    }
+  }
 
 
 }

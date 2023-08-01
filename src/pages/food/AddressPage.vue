@@ -1,26 +1,31 @@
 <template>
   <div class="container">
-    <div class="title">
-      <div @click="nextPage" class="arrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-          <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="title-big">Add new address</div>
-      <div></div>
-    </div>
+    <HeaderPage :title="title"/>
     <div>
       <div class="input-login">
         <label class="title" for="name">Full name</label>
-        <input id="name" class="input" type="text" placeholder="Full name...">
+        <input v-model="fullName"
+               id="name"
+               class="input"
+               type="text"
+               placeholder="Full name...">
       </div>
       <div class="input-login">
-        <label class="title" for="phone">Phone Number</label>
-        <input id="phone" class="input" type="number" placeholder="Phone Number...">
+        <label class="title"
+               for="phone">Phone Number</label>
+        <input v-model="phoneNumber"
+               id="phone"
+               class="input"
+               type="number"
+               placeholder="Phone Number...">
       </div>
       <div class="input-login">
         <label class="title" for="password">State</label>
-        <input id="password" class="input" type="text" placeholder="State...">
+        <input v-model="state"
+               id="password"
+               class="input"
+               type="text"
+               placeholder="State...">
         <svg class="fa-eye" xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
           <path d="M1 11L6 6.31607L0.999999 1.31607" stroke="#111719" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round"/>
@@ -28,7 +33,11 @@
       </div>
       <div class="input-login">
         <label class="title" for="password">City</label>
-        <input id="password" class="input" type="text" placeholder="Select City">
+        <input v-model="city"
+               id="password"
+               class="input"
+               type="text"
+               placeholder="Select City">
         <svg class="fa-eye" xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
           <path d="M1 11L6 6.31607L0.999999 1.31607" stroke="#111719" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round"/>
@@ -36,10 +45,14 @@
       </div>
       <div class="input-login">
         <label class="title" for="phone">Street (Include house number)r</label>
-        <input id="phone" class="input" type="text" placeholder="Street">
+        <input v-model="street"
+               id="phone"
+               class="input"
+               type="text"
+               placeholder="Street">
       </div>
     </div>
-    <router-link to="/homescreen">
+    <router-link to="/profile">
       <div class="btn-save-wrapper">
         <button class="btn-save">Save</button>
       </div>
@@ -48,9 +61,20 @@
   </div>
 </template>
 <script>
+import HeaderPage from "@/components/HeaderPage.vue";
+import { mapState, mapMutations } from 'vuex';
+
 export default {
+  components: {HeaderPage},
   data() {
     return {
+      fullName: 'Phạm Thị Thanh Huyền',
+      phoneNumber: '0981156216',
+      state: 'Select State',
+      city: 'Hưng Yên ',
+      street: 'Khoái Châu',
+
+      title: 'Add new address',
       commentList: [
         {
           id: 1,
@@ -79,12 +103,13 @@ export default {
       ]
     }
   },
-  methods:{
-    nextPage(){
+  methods: {
+    nextPage() {
       window.history.go(-1)
     }
 
-  }
+  },
+
 
 }
 </script>
@@ -94,7 +119,8 @@ export default {
   height: 100%;
   padding: 37px 26px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
-  .arrow{
+
+  .arrow {
     padding: 12px 17px;
     border-radius: 10px;
     box-shadow: 0px 20px 30px 0px rgba(211, 209, 216, 0.25);

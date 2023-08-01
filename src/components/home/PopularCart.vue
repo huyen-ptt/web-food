@@ -39,7 +39,7 @@
             </defs>
           </svg>
         </div>
-        <div class="quanlityy"><span class="do">$</span>5.50
+        <div class="quanlityy"><span class="do">$</span>{{ item.total}}
         </div>
       </div>
       <div class="name">{{ item.name }}</div>
@@ -52,12 +52,12 @@ export default {
   data() {
     return {
       popularList: [
-        {id: 1, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png'},
-        {id: 2, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png'},
-        {id: 3, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png'},
-        {id: 4, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png'},
-        {id: 5, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png'},
-        {id: 6, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png'},
+        {id: 1, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png', total: 5.52},
+        {id: 2, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png', total: 3.21},
+        {id: 3, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png', total: 5.32},
+        {id: 4, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png', total: 4.34},
+        {id: 5, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-avt.png', total: 2.12},
+        {id: 6, name: 'Salmon Salad', description: 'Baked salmon fish', img: '/imgs/popular-img.png', total: 5.76},
 
       ]
     }
