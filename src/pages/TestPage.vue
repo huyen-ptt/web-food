@@ -1,61 +1,30 @@
 <template>
-  <div>
-    <label v-for="food in foods" :key="food.id" class="custom-checkbox">
-      <input type="checkbox" :id="`check${food.id}`" v-model="food.checked">
-      <span class="checkbox-icon"></span>
-      {{ food.name }}
-    </label>
-  </div>
+  <input class="custom-file-input" type="file">
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      foods: [
-        { id: 1, name: 'Pizza', checked: false },
-        { id: 2, name: 'Burger', checked: true },
-        { id: 3, name: 'Salad', checked: false },
-        // Add more food items as needed
-      ],
-    };
-  },
-};
-</script>
-
-<style scoped>
-
-.custom-checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
-  margin-right: 20px;
+<style>
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
 }
-
-.custom-checkbox input[type="checkbox"] {
-  display: none; /* Hide the default checkbox */
-}
-
-.custom-checkbox .checkbox-icon {
+.custom-file-input::before {
+  content: 'Select some files';
   display: inline-block;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%; /* Make it circular */
-  border: 2px solid #ff0000; /* Red border color */
-  background-color: white; /* White background color for the circular checkbox */
-  padding: 4px; /* Add some padding inside the checkbox */
-  margin-right: 8px;
-  vertical-align: middle;
-  box-sizing: border-box; /* Include padding in the width and height */
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
 }
-
-.custom-checkbox input[type="checkbox"]:checked + .checkbox-icon {
-  background-color: #ff0000; /* Red background color when checked */
+.custom-file-input:hover::before {
+  border-color: black;
 }
-
-/* Add styles for the second checkbox */
-.custom-checkbox .checkbox-icon + .checkbox-icon {
-  margin-left: 10px; /* Add some space between the two checkboxes */
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 </style>

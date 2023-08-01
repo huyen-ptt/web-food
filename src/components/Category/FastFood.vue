@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-left">
 
-      <svg @click="nextPage" class="arrow-left" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78"
+      <svg @click="prevPage" class="arrow-left" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78"
            fill="none">
         <g filter="url(#filter0_d_814_5554)">
           <path
@@ -36,7 +36,7 @@
 <script>
 export default {
   methods:{
-    nextPage(){
+    prevPage(){
       window.history.go(-1)
     }
 

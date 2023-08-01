@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <div @click="nextPage" class="next">
+    <div @click="prevPage" class="next">
       <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
         <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round"/>
@@ -8,8 +8,10 @@
     </div>
     <div class="photo-representative">
       <div class="circle">
-        <input type="file" id="input" style="display: none">
-        <img class="avt" :src="img"/>
+        <label for="none">
+          <img class="avt" :src="img"/>
+          <input type="file" id="none" @change="loadFile" style="display: none">
+        </label>
         <svg class="cam" xmlns="http://www.w3.org/2000/svg" width="57" height="57" viewBox="0 0 57 57" fill="none">
           <g filter="url(#filter0_d_814_5155)">
             <circle cx="28.5" cy="25.5" r="13.5" fill="white"/>
@@ -40,9 +42,10 @@
     </div>
     <div class="bao-input">
       <div class="input-login">
-        <label class="title" for="email">Full name</label>
-        <input v-model="name"
+        <label class="title" for="email">Name</label>
+        <input v-model="profileData.fullName"
                id="email"
+               :readonly="true"
                class="input"
                type="text"
                placeholder="Full name...">
@@ -50,14 +53,16 @@
       <div class="input-login">
         <label class="title" for="password">E-mail</label>
         <input id="password"
-               v-model="email"
+               readonly
+               v-model="profileData.gmail"
                class="input"
                type="email" placeholder="E-mail...">
       </div>
       <div class="input-login">
         <label class="title" for="phone">Phone Number</label>
-        <input v-model="phone"
+        <input v-model="profileData.phoneNumber"
                id="phone"
+               readonly
                class="input"
                type="number"
                placeholder="Phone Number...">
@@ -67,20 +72,31 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      email: 'phamthanhhuyen19124@gmail.com',
-      phone: '0981156216',
-      name: 'Thanh Huyen',
+      // phone: '0981156216',
+      // name: 'Thanh Huyen',
       img: '/imgs/avt.png'
     }
   },
 
+  computed: {
+    ...mapGetters(['profileData'])
+  },
+
   methods: {
-    nextPage() {
+    prevPage() {
       window.history.go(-1)
-    }
+    },
+    loadFile(event) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.img = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    },
 
   }
 

@@ -10,7 +10,7 @@
         <div>
           <div class="name-food">{{ food.name }}</div>
           <div class="main-food">{{ food.main_food }}</div>
-          <div class="price">${{ food.price }}</div>
+          <div class="price">${{ (food.price * food.quantity).toFixed(2) }}</div>
         </div>
       </div>
       <div class="item-right">
@@ -49,7 +49,15 @@ export default {
           img: '/imgs/salad-cart.png'
         },
       ],
+    }
+  },
 
+  methods: {
+    minusQuanlity(food) {
+      food.quantity -= 1;
+    },
+    plusQuanlity(food) {
+      food.quantity += 1;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <div @click="nextPage" class="arrow">
+    <div @click="prevPage" class="arrow">
       <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
         <path d="M6 1L1 5.68393L6 10.6839" stroke="#111719" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round"/>
@@ -17,7 +17,7 @@ export default {
     title: String
   },
   methods: {
-    nextPage() {
+    prevPage() {
       window.history.go(-1)
     },
   }

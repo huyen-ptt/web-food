@@ -4,7 +4,7 @@
     <div>
       <div class="input-login">
         <label class="title" for="name">Full name</label>
-        <input v-model="fullName"
+        <input v-model="formProfile.fullName"
                id="name"
                class="input"
                type="text"
@@ -13,7 +13,7 @@
       <div class="input-login">
         <label class="title"
                for="phone">Phone Number</label>
-        <input v-model="phoneNumber"
+        <input v-model="formProfile.phoneNumber"
                id="phone"
                class="input"
                type="number"
@@ -44,6 +44,13 @@
         </svg>
       </div>
       <div class="input-login">
+        <label class="title" for="password">E-mail</label>
+        <input id="password"
+               v-model="gmail"
+               class="input"
+               type="email" placeholder="E-mail...">
+      </div>
+      <div class="input-login">
         <label class="title" for="phone">Street (Include house number)r</label>
         <input v-model="street"
                id="phone"
@@ -52,7 +59,7 @@
                placeholder="Street">
       </div>
     </div>
-    <router-link to="/profile">
+    <router-link to="/profile" @click="updateProfileData">
       <div class="btn-save-wrapper">
         <button class="btn-save">Save</button>
       </div>
@@ -62,18 +69,24 @@
 </template>
 <script>
 import HeaderPage from "@/components/HeaderPage.vue";
-import { mapState, mapMutations } from 'vuex';
+import {mapGetters} from 'vuex';
 
 export default {
   components: {HeaderPage},
+
+  created() {
+    this.formProfile = { ...this.profileData }
+  },
+
   data() {
     return {
+      formProfile: {},
       fullName: 'Phạm Thị Thanh Huyền',
       phoneNumber: '0981156216',
       state: 'Select State',
       city: 'Hưng Yên ',
       street: 'Khoái Châu',
-
+      gmail: 'phamthanhhuyen19124@gmail.com',
       title: 'Add new address',
       commentList: [
         {
@@ -104,11 +117,25 @@ export default {
     }
   },
   methods: {
-    nextPage() {
+    prevPage() {
       window.history.go(-1)
-    }
+    },
 
+    updateProfileData() {
+      const profileData = {
+        fullName: this.formProfile.fullName,
+        phoneNumber: this.formProfile.phoneNumber,
+        state: 'Select State',
+        city: this.city,
+        gmail: this.gmail,
+        street: this.street,
+      }
+      this.$store.commit('SET_PROFILE_DATA', profileData)
+    },
   },
+  computed:{
+    ...mapGetters(['profileData'])
+  }
 
 
 }

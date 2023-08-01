@@ -74,9 +74,10 @@ export default {
     }
   },
   methods:{
-    nextPage(){
+    prevPage(){
       window.history.go(-1)
     },
+
     addComment(){
       const comment = {
         content: this.comment,
@@ -85,7 +86,7 @@ export default {
         evaluate: '3.0',
         avt: '/imgs/avt-cmt.png'
       }
-      this.commentList.push(comment)
+      this.commentList.unshift(comment)
       this.comment='';
     }
 

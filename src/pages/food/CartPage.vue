@@ -34,7 +34,7 @@ export default {
     }
   },
   methods: {
-    nextPage() {
+    prevPage() {
       window.history.go(-1)
     },
   },

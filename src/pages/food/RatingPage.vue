@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="bao-img">
-      <svg @click="nextPage" class="next" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
+      <svg @click="prevPage" class="next" xmlns="http://www.w3.org/2000/svg" width="78" height="78" viewBox="0 0 78 78" fill="none">
         <g filter="url(#filter0_d_814_4030)">
           <path d="M41 10H27C20.3726 10 15 15.3726 15 22V36C15 42.6274 20.3726 48 27 48H41C47.6274 48 53 42.6274 53 36V22C53 15.3726 47.6274 10 41 10Z" fill="white"/>
         </g>
@@ -81,7 +81,7 @@
 <script>
 export default {
   methods:{
-    nextPage(){
+    prevPage(){
       window.history.go(-1)
     }
 

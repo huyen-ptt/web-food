@@ -1,6 +1,6 @@
 <template>
   <div class="container-register">
-    <img @click="nextPage" class="arrow" src="@/assets/imgs/arrow-left.png"/>
+    <img @click="prevPage" class="arrow" src="@/assets/imgs/arrow-left.png"/>
     <div class="login">Sign Up</div>
     <div>
       <div class="input-login">
@@ -64,7 +64,7 @@
 <script>
 export default {
   methods: {
-    nextPage() {
+    prevPage() {
       window.history.go(-1)
     }
 
