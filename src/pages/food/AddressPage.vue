@@ -1,64 +1,34 @@
 <template>
   <div class="container">
-    <HeaderPage :title="title"/>
-    <div>
-      <div class="input-login">
-        <label class="title" for="name">Full name</label>
-        <input v-model="formProfile.fullName"
-               id="name"
-               class="input"
-               type="text"
-               placeholder="Full name...">
-      </div>
-      <div class="input-login">
-        <label class="title"
-               for="phone">Phone Number</label>
-        <input v-model="formProfile.phoneNumber"
-               id="phone"
-               class="input"
-               type="number"
-               placeholder="Phone Number...">
-      </div>
-      <div class="input-login">
-        <label class="title" for="password">State</label>
-        <input v-model="state"
-               id="password"
-               class="input"
-               type="text"
-               placeholder="State...">
-        <svg class="fa-eye" xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-          <path d="M1 11L6 6.31607L0.999999 1.31607" stroke="#111719" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="input-login">
-        <label class="title" for="password">City</label>
-        <input v-model="city"
-               id="password"
-               class="input"
-               type="text"
-               placeholder="Select City">
-        <svg class="fa-eye" xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-          <path d="M1 11L6 6.31607L0.999999 1.31607" stroke="#111719" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="input-login">
-        <label class="title" for="password">E-mail</label>
-        <input id="password"
-               v-model="gmail"
-               class="input"
-               type="email" placeholder="E-mail...">
-      </div>
-      <div class="input-login">
-        <label class="title" for="phone">Street (Include house number)r</label>
-        <input v-model="street"
-               id="phone"
-               class="input"
-               type="text"
-               placeholder="Street">
-      </div>
-    </div>
+   <div>
+     <HeaderPage :title="title"/>
+     <div>
+       <div class="input-login">
+         <label class="title" for="name">Name</label>
+         <input v-model="formProfile.fullName"
+                id="name"
+                class="input"
+                type="text"
+                placeholder="Full name...">
+       </div>
+       <div class="input-login">
+         <label class="title"
+                for="phone">Phone Number</label>
+         <input v-model="formProfile.phoneNumber"
+                id="phone"
+                class="input"
+                type="number"
+                placeholder="Phone Number...">
+       </div>
+       <div class="input-login">
+         <label class="title" for="password">E-mail</label>
+         <input id="password"
+                v-model="gmail"
+                class="input"
+                type="email" placeholder="E-mail...">
+       </div>
+     </div>
+   </div>
     <router-link to="/profile" @click="updateProfileData">
       <div class="btn-save-wrapper">
         <button class="btn-save">Save</button>
@@ -83,11 +53,8 @@ export default {
       formProfile: {},
       fullName: 'Phạm Thị Thanh Huyền',
       phoneNumber: '0981156216',
-      state: 'Select State',
       city: 'Hưng Yên ',
-      street: 'Khoái Châu',
       gmail: 'phamthanhhuyen19124@gmail.com',
-      title: 'Add new address',
       commentList: [
         {
           id: 1,
@@ -125,10 +92,7 @@ export default {
       const profileData = {
         fullName: this.formProfile.fullName,
         phoneNumber: this.formProfile.phoneNumber,
-        state: 'Select State',
-        city: this.city,
         gmail: this.gmail,
-        street: this.street,
       }
       this.$store.commit('SET_PROFILE_DATA', profileData)
     },
@@ -143,7 +107,11 @@ export default {
 <style scoped lang="scss">
 .container {
   width: 100%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  height: 100vh;
   padding: 37px 26px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
 
