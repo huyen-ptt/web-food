@@ -46,7 +46,7 @@
 export default {
   methods:{
     showAlert(){
-      this.$message.error('The page is in progress')
+      this.$message.info('The page is in progress')
     }
   }
 }

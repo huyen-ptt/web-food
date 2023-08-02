@@ -85,7 +85,8 @@ export default {
       return timestamp;
     },
     prevPage(){
-      window.history.go(-1)
+      // window.history.go(-1)
+      this.$router.push('/')
     },
 
     addComment(){

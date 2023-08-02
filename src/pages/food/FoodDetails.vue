@@ -30,7 +30,6 @@ export default {
   padding: 20px;
   box-shadow: 18px 18px 36px 0px rgba(211, 209, 216, 0.25);
 
-
   .btn-cart {
     display: flex;
     align-items: center;
