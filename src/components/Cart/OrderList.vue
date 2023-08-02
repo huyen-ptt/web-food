@@ -54,7 +54,10 @@ export default {
 
   methods: {
     minusQuanlity(food) {
-      food.quantity -= 1;
+      if (food.quantity > 0) {
+        food.quantity -= 1;
+      }
+
     },
     plusQuanlity(food) {
       food.quantity += 1;
