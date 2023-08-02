@@ -4,7 +4,9 @@
          :key="item.id"
          class="popular">
       <div class="img-popular">
+      <router-link to="/detail/1">
         <img class="avt" :src="item.img"/>
+      </router-link>
         <div class="star">
           <div class="product-quality">4.5</div>
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10" fill="none">
@@ -69,7 +71,7 @@ export default {
   display: grid;
   grid-template-columns:auto auto auto;
   align-items: center;
-  gap: 12px;
+  gap: 18px;
   margin-bottom: 30px;
   .img-popular{
     position: relative;

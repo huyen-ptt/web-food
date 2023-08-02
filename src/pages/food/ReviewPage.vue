@@ -23,7 +23,7 @@
             </div>
             <div>
               <div class="name">{{ cmt.name }}</div>
-              <div class="date">{{ cmt.dateCmt }}</div>
+              <div class="date">{{ convertTime(cmt.dateCmt) }}</div>
             </div>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="4" height="12" viewBox="0 0 4 12" fill="none">
@@ -38,11 +38,13 @@
 </template>
 <script>
 import HeaderPage from "@/components/HeaderPage.vue";
-
+import {formatTime} from "@/until.js";
+// console.log("time now", formatTime(1000 * 1687880123));
 export default {
   components: {HeaderPage},
   data() {
     return {
+      currentTime: '',
       comment: '',
       title: 'Reviews',
       commentList: [
@@ -50,7 +52,7 @@ export default {
           id: 1,
           content: 'Really convenient and the points system helps benefit loyalty. Some mild glitches here and there, but nothing too egregious. Obviously needs to roll out to more remote.',
           name: 'Alyce Lambo',
-          dateCmt: '25/06/2020',
+          dateCmt: 1690946111,
           evaluate: '5.0',
           avt: '/imgs/avt-cmt.png'
         },
@@ -58,7 +60,7 @@ export default {
           id: 2,
           content: 'Been a life saver for keeping our sanity during the pandemic, although they could improve some of their ui and how they handle specials as it often is unclear how to use them or everything is sold out so fast it feels a bit bait and switch. Still I\'d be stir crazy and losing track of days without so...',
           name: 'Gonela Solom',
-          dateCmt: '22/06/2020',
+          dateCmt: 1690123456,
           evaluate: '4.5',
           avt: '/imgs/avt-comment.png'
         },
@@ -66,14 +68,22 @@ export default {
           id: 3,
           content: 'Got an intro offer of 50% off first order that did not work..... I have scaled the app to find a contact us button but only a spend with us button available. ',
           name: 'Brian C',
-          dateCmt: '21/06/2020',
+          dateCmt: 1690123456,
           evaluate: '2.5',
           avt: '/imgs/avtt-amt.png'
         },
       ]
     }
   },
+  // created() {
+  //
+  // },
   methods:{
+   currentTimestamp() {
+      const currentTime = new Date();
+      const timestamp = Math.floor(currentTime.getTime() / 1000); // Chia cho 1000 để lấy timestamp theo đơn vị giây
+      return timestamp;
+    },
     prevPage(){
       window.history.go(-1)
     },
@@ -82,12 +92,15 @@ export default {
       const comment = {
         content: this.comment,
         name: 'Huyen Thanh',
-        dateCmt: '21/06/2022',
+        dateCmt: this.currentTimestamp(),
         evaluate: '3.0',
         avt: '/imgs/avt-cmt.png'
       }
       this.commentList.unshift(comment)
       this.comment='';
+    },
+    convertTime(time){
+      return formatTime(1000 * time);
     }
 
   }

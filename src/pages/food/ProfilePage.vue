@@ -76,8 +76,6 @@ import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
-      // phone: '0981156216',
-      // name: 'Thanh Huyen',
       img: '/imgs/avt.png'
     }
   },
@@ -88,7 +86,8 @@ export default {
 
   methods: {
     prevPage() {
-      window.history.go(-1)
+      // window.history.go(-1)
+      this.$router.push('/')
     },
     loadFile(event) {
       const reader = new FileReader();

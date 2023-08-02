@@ -39,16 +39,6 @@ export default {
     },
   },
   computed: {
-    // minusQuanlity(item){
-    //   console.log(item)
-    //   if (item > 0) {
-    //    return  item --;
-    //   }
-    // },
-    // plusQuanlity(item){
-    //   console.log(item)
-    //   return item ++;
-    // }
   }
 }
 </script>
